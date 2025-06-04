@@ -83,7 +83,7 @@ Ensure the following dependencies are installed:
 ## Usage
 
 1.  **Download Data:**
-    Download the `eroam_data` from [this SharePoint link](https://transgp-my.sharepoint.com/:f:/g/personal/wl_xing_transgp_hk/Evz6VVBEYcVPrK5qhRBF1sIB-defWjkdOtLevZ0Oqe1JbA). This link contains the datasets used for testing.
+    Download the `crossroad` sequence from [this SharePoint link](https://transgp-my.sharepoint.com/:u:/g/personal/wl_xing_transgp_hk/EQJ6ulcgb_ROod594aTlF9cBogD_igh9Q4_kxliz5jUMyQ). This link contains the datasets used for testing.
 
 2.  **Configure Launch File:**
     Open the `eroam_run_campus.launch` file located in the `eroam` package (e.g., `~/eroam_ws/src/eroam/launch/eroam_run_campus.launch`).
@@ -93,7 +93,7 @@ Ensure the following dependencies are installed:
     ```
     Replace `path_to_your_data` with the actual path to your `.bag` file. For example:
     ```xml
-    <node name="rosbag_play" pkg="rosbag" type="play" args="-d 3.0 /path/to/your/downloaded/dataset.bag"/>
+    <node name="rosbag_play" pkg="rosbag" type="play" args="-d 3.0 ~/Downloads/crossroad.bag"/>
     ```
 
 3.  **Run EROAM:**
