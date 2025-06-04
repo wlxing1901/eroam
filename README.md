@@ -85,6 +85,8 @@ Ensure the following dependencies are installed:
 1.  **Download Data:**
     Download the `crossroad` sequence from [this SharePoint link](https://transgp-my.sharepoint.com/:u:/g/personal/wl_xing_transgp_hk/EQJ6ulcgb_ROod594aTlF9cBogD_igh9Q4_kxliz5jUMyQ). This link contains the datasets used for testing.
 
+    We also provide the full **EROAM-campus dataset** used in our paper, which includes real-world sequences with event camera data and LiDAR-based ground truth for rotational motion. You can download it from [this SharePoint link](https://transgp-my.sharepoint.com/:f:/g/personal/wl_xing_transgp_hk/Evz6VVBEYcVPrK5qhRBF1sIB-defWjkdOtLevZ0Oqe1JbA).
+
 2.  **Configure Launch File:**
     Open the `eroam_run_campus.launch` file located in the `eroam` package (e.g., `~/eroam_ws/src/eroam/launch/eroam_run_campus.launch`).
     Modify the following line to point to the correct path of your downloaded rosbag data:
