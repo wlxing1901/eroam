@@ -1,0 +1,36 @@
+<launch>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find eroam)/rviz/eroam.rviz"/>
+    <node name="eroam_run" pkg="eroam" type="eroam.eroam_run" output="screen">
+        <param name="options/event_sphere_radius" type="double" value="1.0"/>
+        <param name="options/max_frame_evs" type="int" value="1500"/>
+        <param name="options/min_initial_frame_evs" type="int" value="1500"/>
+        <param name="options/min_frame_evs" type="int" value="500"/>
+        <param name="options/kf_angle_deg" type="double" value="1.0"/>
+        <param name="options/max_iteration" type="int" value="2"/>
+        <param name="options/max_line_distance" type="double" value="0.006"/>
+        <param name="options/min_effective_pts" type="int" value="10"/>
+        <param name="options/eps" type="double" value="0.000005"/>
+        
+        <param name="dvs/width" type="int" value="640"/>
+        <param name="dvs/height" type="int" value="480"/>
+        <rosparam param="dvs/intrinsic_matrix">[ 1000.4925574922, 0.0, 326.77589244342, 0.0, 999.491097863025, 259.554489884806, 0.0, 0.0, 1.0]</rosparam>
+        <rosparam param="dvs/dist_params">[-0.153648057754752, 0.115883090047033, 0.0, 0.0, 0.0 ]</rosparam>
+        <param name="dvs/ev_topic" type="string" value="/dvxplorer/events"/>
+        <param name="dvs/dvxplorer_correction_ratio" type="double" value="2.0"/> 
+        
+        <param name="output/pose_result_file" type="string" value="$(find eroam)/output/pose_result.txt"/>
+        <param name="output/panoramic_output_file" type="string" value="$(find eroam)/output/panoramic.png"/>
+        <param name="output/panoramic_height_res" type="int" value="2000"/>
+        <param name="output/panoramic_top_brightness_percent" type="double" value="0.15"/>
+        <param name="output/panoramic_longitude_start" type="double" value="-185.0"/>
+        <param name="output/panoramic_longitude_end" type="double" value="15.0"/>
+        <param name="output/panoramic_latitude_start" type="double" value="-30.0"/>
+        <param name="output/panoramic_latitude_end" type="double" value="40.0"/>
+        
+        <param name="rdm/use_regional_density_management" type="bool" value="true"/>
+        <param name="rdm/cell_angle" type="double" value="5.0"/>
+        <param name="rdm/equator_capacity" type="int" value="800"/>
+        <param name="rdm/min_capacity" type="int" value="5"/>
+    </node>
+    <node name="rosbag_play" pkg="rosbag" type="play" args="-d 3.0 /home/wlxing/Downloads/crossroad.bag"/>
+</launch>

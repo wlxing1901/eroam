@@ -1,0 +1,15 @@
+<launch>
+    <node name="rosbag_repack" pkg="eroam" type="eroam.rosbag_repack" output="screen">
+
+        <param name="input_bag" value="path_to_your_data"/>
+        <param name="output_bag" value="path_to_your_data_1000hz"/>
+
+        <param name="event_topic" value="/dvxplorer/events"/>
+        <param name="segment_duration" value="0.001"/>
+        <!-- list of pixels that don't work properly -->
+        <rosparam param="bad_pixels">
+            - [342, 158]
+            - [343, 158]
+        </rosparam>
+    </node>
+</launch>
